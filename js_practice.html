@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Hello</p>
+
+    <script>
+        function replaceText() {
+            var element = document.getElementById("text");
+            if (element.innerHTML === "Hello") {
+                element.innerHTML = "World";
+            } else {
+                element.innerHTML = "Hello";
+            }
+        }
+
+        replaceText();
+
+        var fruits = ["apple", "banana", "orange"];
+
+        var paragraphs = document.getElementsByTagName("p");
+        console.log(paragraphs);
+
+        document.getElementById("text").innerHTML = "Hello, world";
+    </script>
+</body>
+</html>
