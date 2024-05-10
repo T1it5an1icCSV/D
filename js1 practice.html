@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fruits = ['apple', 'apple', 'kiwi', 'banana', 'kiwi', 'apple'];
+        const fruitCount = {};
+
+        fruits.forEach(fruit => {
+            if (fruitCount[fruit]) {
+                fruitCount[fruit]++;
+            } else {
+                fruitCount[fruit] = 1;
+            }
+        });
+        document.write(JSON.stringify(fruitCount) + "<br>");
+    </script>
+
+    <script>
+        const fruitsArr = ['apple', 'apple', 'kiwi', 'banana', 'kiwi', 'apple'];
+
+        const uniqueFruitsSet = new Set(fruitsArr);
+        const uniqueFruitsArray = [];
+
+        uniqueFruitsSet.forEach(fruit => {
+            uniqueFruitsArray.push(fruit);
+        });
+
+        document.write(JSON.stringify(uniqueFruitsArray) + "<br>");
+    </script>
+
+    <script>
+        const fruitsArrr = ['apple', 'apple', 'kiwi', 'banana', 'kiwi', 'apple'];
+        const uniqueFruitsSett = new Set(fruitsArrr);
+
+        const uniqueFruitsArrayy = [];
+        uniqueFruitsSett.forEach(function(value) {
+            uniqueFruitsArrayy.push(value);
+        });
+        document.write(JSON.stringify(uniqueFruitsArrayy) + "<br>");
+    </script>
+
+    <script>
+        const students = [
+            { name: 'alex', age: 25 },
+            { name: 'mike', age: 24 },
+            { name: 'masha', age: 29 },
+            { name: 'will', age: 11 },
+        ];
+
+        function groupStudentsByAge(students) {
+            const groupedStudents = {};
+
+            students.forEach(student => {
+                if (groupedStudents[student.age]) {
+                    groupedStudents[student.age].push(student);
+                } else {
+                    groupedStudents[student.age] = [student];
+                }
+            });
+
+            return groupedStudents;
+        }
+
+        const groupedByAge = groupStudentsByAge(students);
+        document.write(JSON.stringify(groupedByAge) + "<br>");
+    </script>
+
+    <script>
+        function findPairWithSum(array, targetSum) {
+            const pair = [];
+
+            for (let i = 0; i < array.length; i++) {
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[i] + array[j] === targetSum) {
+                        pair.push([array[i], array[j]]);
+                        return pair;
+                    }
+                }
+            }
+
+            return pair;
+        }
+        const numbers = [2, 7, 11, 15];
+        const sumToFind = 9;
+
+        const resultPair = findPairWithSum(numbers, sumToFind);
+        document.write(JSON.stringify(resultPair) + "<br>");
+
+    </script>
+</body>
+
+</html>
